@@ -31,8 +31,10 @@ function onMouseMove(event){
     }
 }
 
-function onMouseDown(event){
-    painting = true;
+function handleColorClick(event){
+    const color = event.target.style.backgroundColor;
+    console.log(color);
+    ctx.strokeStyle = color;
 }
 
 // function onMouseUp(event){
@@ -47,3 +49,5 @@ if(canvas){
 } 
 
 console.log(Array.from(colors));
+
+Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
