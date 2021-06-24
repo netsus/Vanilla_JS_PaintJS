@@ -10,6 +10,8 @@ canvas.height = 750;
 
 ctx.strokeStyle = "#2c2c2c";
 ctx.lineWidth = 1;
+ctx.fillStyle = "purple"
+ctx.fillRect(50, 20, 100, 100);
 
 let painting = false;
 let filling = false;
