@@ -1,6 +1,7 @@
 const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor")
+const range = document.getElementById("jsRange")
 
 canvas.width = 750;
 canvas.height = 750;
@@ -34,12 +35,16 @@ function onMouseMove(event){
 function handleColorClick(event){
     const color = event.target.style.backgroundColor;
     console.log(color);
-    ctx.strokeStyle = color;
+    ctx.strokeStyle = color; // strokeStyle을 클릭한 색깔로 override하기
 }
 
 // function onMouseUp(event){
 //     stopPainting();
 // }
+
+function handelRangeChange(event){
+    console.log(event.target.value);
+}
 
 if(canvas){
     canvas.addEventListener("mousemove", onMouseMove)
@@ -48,6 +53,9 @@ if(canvas){
     canvas.addEventListener("mouseleave", stopPainting)
 } 
 
-console.log(Array.from(colors));
-
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
+
+if(range){
+    range.addEventListener("input", handelRangeChange)
+}
+
