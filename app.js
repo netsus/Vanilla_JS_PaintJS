@@ -10,6 +10,8 @@ const CANVAS_SIZE = 750;
 canvas.width = CANVAS_SIZE;
 canvas.height = CANVAS_SIZE;
 
+ctx.fillStyle = "white";
+ctx.fillRect(0, 0, CANVAS_SIZE, CANVAS_SIZE);
 ctx.strokeStyle = INITIAL_COLOR;
 ctx.fillStyle = INITIAL_COLOR;
 ctx.lineWidth = 1;
@@ -69,12 +71,17 @@ function handleCanvasClick(){
     }
 }
 
+function handleCM(event){
+    event.preventDefault();
+}
+
 if(canvas){
     canvas.addEventListener("mousemove", onMouseMove);
     canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
     canvas.addEventListener("click", handleCanvasClick);
+    canvas.addEventListener("contextmenu", handleCM)
 } 
 
 Array.from(colors).forEach(color => color.addEventListener("click", handleColorClick));
