@@ -4,7 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 30px 0px;
 }
@@ -18,13 +18,19 @@ body {
 }
 
 .controls {
-  margin-top: 20px;
+  height: 600px;
+  margin-right: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content:flex-start;
 }
 
 .controls .controls__btns {
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-bottom: 20px;
 }
 
@@ -50,9 +56,11 @@ body {
 
 .controls .controls__colors {
   display: flex;
+  flex-direction: column;
 }
 
 .controls__colors .controls__color {
+  margin-top: 5px;
   width: 50px;
   height: 50px;
   border-radius: 25px;
@@ -60,9 +68,14 @@ body {
   box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
-.controls .controls__range {
-  width: 100%;
-  margin-bottom: 20px;
+.canvas_range {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.controls__range {
+  width: 80%;
+  margin-top: 15px;
 }
 
 .controls__range input {

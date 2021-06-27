@@ -5,7 +5,7 @@ const range = document.getElementById("jsRange");
 const mode = document.getElementById("jsMode");
 const saveBtn = document.getElementById("jsSave");
 
-const INITIAL_COLOR = "2c2c2c";
+const INITIAL_COLOR = "#2c2c2c";
 const CANVAS_SIZE = 750;
 
 canvas.width = CANVAS_SIZE;
@@ -65,6 +65,7 @@ function handleModeClick(event){
 function handleCanvasClick(){
     if(filling){
         ctx.fillRect(0, 0, canvas.width, canvas.height);
+        console.log(ctx.fillStyle);
     }
 }
 
